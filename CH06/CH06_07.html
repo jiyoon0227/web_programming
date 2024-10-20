@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CH06_07</title>
+</head>
+<body>
+    <script>
+    var num=prompt("숫자 입력","");
+    //isFinite :num 이 무한한 값인지 확인
+    if(isFinite(num)){
+    //string 을 정수로 변환함
+        var n=parseInt(num);
+        if(n>0){
+            var least=n%10; //마지막 자릿수 least
+
+            //첫 자리수 저장하기 위해 선언된 변수, 처음 초기화 0
+            var most=0;
+            //n이 0이 아닐 때까지 반복
+            while(n!=0){
+                most=n%10;
+                n=Math.floor(n/10);
+            }
+
+            if(most==least)
+            document.write(num+": 같음");
+            else
+            document.write(num+": 다름");
+        }
+    }
+    </script>
+</body>
+</html>
