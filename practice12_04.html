@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>일기 작성</title>
+    <style>
+      textarea {
+        width: 100%;
+        height: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>일기쓰기</h1>
+    <p id="today"></p>
+    <textarea id="diary" placeholder="오늘의 일기를 작성하세요..."></textarea>
+    <br />
+    <button onclick="saveDiary()">저장</button>
+    <button onclick="viewDiary()">보기</button>
+
+    <script>
+      
+      function displayDate() {
+        let today = new Date();
+        let dateString =
+          today.getFullYear() +
+          '.' +
+          (today.getMonth() + 1) +
+          '.' +
+          today.getDate();
+        document.getElementById('today').innerHTML = '오늘 ' + dateString;
+        return dateString;
+      }
+
+  
+      function saveDiary() {
+        let date = displayDate();
+        let content = document.getElementById('diary').value;
+        if (content.trim() === '') {
+          alert('일기 내용을 입력해주세요.');
+          return;
+        }
+
+        let dates = localStorage.getItem('diaryDates') || '';
+        let contents = localStorage.getItem('diaryContents') || '';
+
+        if (dates && contents) {
+          dates += '\n';
+          contents += '\n';
+        }
+
+        dates += date;
+        contents += content;
+
+        localStorage.setItem('diaryDates', dates);
+        localStorage.setItem('diaryContents', contents);
+
+        alert('일기가 저장되었습니다.');
+        document.getElementById('diary').value = '';
+      }
+
+ 
+      function viewDiary() {
+        window.open('prac12-4-view.html', '_blank', 'width=600,height=400');
+      }
+
+
+      window.onload = displayDate;
+    </script>
+  </body>
+</html>

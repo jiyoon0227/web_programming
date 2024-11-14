@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>일기 보기</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0 auto;
+        max-width: 800px;
+        padding: 20px;
+      }
+      h1 {
+        text-align: center;
+      }
+      .diary-entry {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+      }
+      .diary-number {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid green;
+        min-width: 1.5em; /* 숫자의 너비에 맞춤 */
+        min-height: 1.5em; /* 숫자의 높이에 맞춤 */
+        text-align: center;
+        line-height: 1;
+        padding: 0; /* 패딩 제거 */
+        box-sizing: border-box;
+      }
+      .diary-date {
+        width: 100px;
+        font-weight: bold;
+      }
+      .diary-content {
+        flex-grow: 1;
+        margin-left: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>일기 보기</h1>
+    <hr />
+
+    <script>
+      function displayDiaries() {
+        const dates = localStorage.getItem('diaryDates');
+        const contents = localStorage.getItem('diaryContents');
+
+        if (!dates || !contents) {
+          document.write('<p>저장된 일기가 없습니다.</p>');
+          return;
+        }
+
+        const dateArray = dates.split('\n');
+        const contentArray = contents.split('\n');
+
+        for (let i = 0; i < dateArray.length; i++) {
+          document.write(`
+            <div class="diary-entry">
+              <span class="diary-number">${i + 1}</span>
+              <span class="diary-date">${dateArray[i]}</span>
+              <span class="diary-content">${contentArray[i]}</span>
+            </div>
+          `);
+        }
+      }
+
+      // 일기 목록 표시
+      displayDiaries();
+    </script>
+  </body>
+</html>
