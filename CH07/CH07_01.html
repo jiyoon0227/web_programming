@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>난수</title>
+</head>
+
+<body>
+    <h3>난수 10개 생성</h3> <hr>
+    <script>
+        //난수 10개 저장
+
+        var plots=[];
+        for(var i=0;i<10;i++){
+            //1~100까지의 임의의 정수 할당
+            plots[i]=Math.floor(Math.random()*100)+1;
+        }
+
+        //난수 10개 출력
+        for(var i=0;i<10;i++){
+            document.write(plots[i]+" " );
+        }
+
+        document.write("<hr>");
+        
+        //big은 제일 큰 수 저장
+        var big=plots[0];
+        //큰 수 찾기
+        for(var i=1;i<10;i++){
+            if(plots[i]>big){
+                big=plots[i];
+            }
+        }
+        document.write("제일 큰 수는 " + big);
+        document.write("<hr>");
+
+        //배열 정렬
+        plots.sort();
+        for(var i=0;i<10;i++){
+            document.write(plots[i]+" ");
+        }
+    </script>   
+</body>
+</html>
