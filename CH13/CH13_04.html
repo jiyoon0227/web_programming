@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CH13_04</title>
+</head>
+<body>
+	<h3>오디오 재생</h3>
+	듣고 싶은 곡은 선택하고 시작 버튼을 누르면 연속하여 자동 연주합니다.
+	<hr>
+	<audio id="audio" src="" autoplay controls></audio>
+	<form>
+		<input type="checkbox" value="./media/Aegukga.mp3" onclick="addMusic(this)">애국가<br>
+		<input type="checkbox" value="./media/EmbraceableYou.mp3" onclick="addMusic(this)">EmbraceableYou<br>
+		<input type="checkbox" value="./media/bad.mp3" onclick="addMusic(this)">bad<br>
+		<input type="checkbox" value="./media/clock.mp3" onclick="addMusic(this)">clock<br>
+		<input type="button" value="연주시작" onclick="play()">
+	</form>
+<script>
+	var audio = document.getElementById("audio");
+	var musicArr = new Array();
+
+	function addMusic(obj){
+		if(obj.checked){
+			musicArr[musicArr.length]=obj.value;
+		}
+	}
+
+	function play(){
+		for(var i=0;i<musicArr.length;i++){
+			audio.src=musicArr[i];
+			audio.play();
+		}
+	}
+</script>
+</body>
+</html>

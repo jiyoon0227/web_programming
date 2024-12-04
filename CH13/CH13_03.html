@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>CH13_03</title>
+</head>
+<body>
+	<h3>애국가 연주</h3>
+	<hr>
+	<audio id="audio" src="./media/Aegukga.mp3" autoplay controls></audio>
+<script>
+	var audio = document.getElementById("audio");
+	audio.onended = function(e){
+		var ret = confirm("다시할까요?");
+		if(ret==true){
+			audio.load();
+			audio.play();
+		}
+	}
+</script>
+</body>
+</html>
