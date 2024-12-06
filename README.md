@@ -46,7 +46,8 @@ Study
 📝 Week 7
 -7주차 연습
 -BOM 객체 , 캔버스 그래픽 학습
--practice 10_05.html  /  practice 10_06.html 실습
+-practice 10_05.html (SetTimeout, SetInterval 시계 )  
+ practice 10_06.html (div 태그 활용하여 시계 클릭 시 시계가 멈추고 다시 클릭하면 작동 )
 
 Study
 -명품 HTML,CSS,Javascript 교재 실습문제 풀이  CH10 . CH11
@@ -55,15 +56,16 @@ Study
 -9주차 연습
 -쿠키,세션 스토리지, 로컬 스토리지 학습
 -practice 12_02html / practice 12_04.html  실습
-
+(세션 스토리지 구입리스트 검색  & 일기 작성 )
 Study
 -명품 HTML,CSS,Javascript 교재 실습문제 풀이  CH12
 
 📝 Week 10
 -10주차 연습
 -오디오, 비디오 제어 , 웹워커 학습
--practice 13_06html / practice 13_09.html / practice 13_10.html 실습
-
+-practice 13_06html (곱셈하기 )
+ practice 13_09.html (워커 태스크 만들기 )
+ practice 13_10.html (타이머를 가진 워커 태스크 )
 Study
 -명품 HTML,CSS,Javascript 교재 실습문제 풀이  CH13
 
